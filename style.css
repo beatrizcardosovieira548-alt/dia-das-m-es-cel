@@ -1,0 +1,282 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    border: 2px rgb(182, 231, 255);
+    padding: 10px;
+    overflow-x:hidden;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px rgb(88, 87, 124);
+    padding: 10px;
+    background-color: rgb(142, 145, 225); 
+    margin-bottom: 20px;
+}
+
+.primary-nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(163, 208, 229);
+    background-color: rgb(220, 242, 255); 
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+main{
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+article{
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(163, 208, 229);
+    background-color: rgb(220, 242, 255); 
+    padding: 10px;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 985px;
+}
+
+.secondary-nav{ 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(163, 208, 229);
+    background-color: rgb(220, 242, 255);
+    padding: 10px;
+    align-items: center;
+} 
+
+aside{          
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(163, 208, 229);
+    background-color: rgb(220, 242, 255);
+    padding: 10px;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: rgb(220, 242, 255);
+    padding: 10px;
+    align-items: center;
+}
+
+.secondary-nav div{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+.related-article{
+    border: 2px solid rgb(205, 219, 255);
+    margin-top: 5px;
+    padding: 5px;
+    background: #9bb0c5;
+}
+
+footer{
+    border: 2px solid rgb(163, 208, 229);
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgb(220, 242, 255);
+    flex-wrap: wrap;
+}
+
+h1, h2{
+    margin-top: 0;
+}
+
+.caveat-uniquifier{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #7280bf;
+}
+
+.imgf{
+    height: 150px;
+    width: 150px;
+    transition: 0.7s;
+}
+
+.imgf:hover{
+    filter: drop-shadow(0 0 10px rgb(255, 197, 82));
+    transform: scale(1.05);
+}
+
+.imgc{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.7s;
+}
+
+.imgc:hover{
+    filter: drop-shadow(0 0 15px rgb(255, 197, 82));
+    transform: scale(1.05);
+}
+
+aside section{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+}
+
+iframe{
+    width: 100%;
+    max-width: 100%;
+    height: 578px;
+    border-radius: 15px;
+}
+
+.rosa{
+    position: fixed;
+    top: -50px;
+    font-size: 30px;
+    animation: cair linear forwards;
+    pointer-events: none;
+}
+
+@keyframes cair{
+    to{
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVIDADE CELULAR */
+
+@media (max-width: 768px){
+
+    body{
+        padding: 5px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-nav{
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .imgf{
+        width: 80px;
+        height: 80px;
+    }
+
+    .imgc{
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    article{
+        padding: 15px;
+    }
+
+    h1{
+        font-size: 35px;
+        text-align: center;
+    }
+
+    p{
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    iframe{
+        height: 220px;
+    }
+
+    footer{
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .secondary-nav,
+    aside,
+    main{
+        width: 100%;
+    }
+
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+}
+
+/* imagem principal */
+.foto-click{
+    width:250px;
+    cursor:pointer;
+}
+
+/* fotos caindo */
+.falling-photo{
+    position:fixed;
+    width:120px;
+    pointer-events:none;
+    animation:fall 4s linear forwards;
+    z-index:9999;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-150px) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
